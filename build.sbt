@@ -1,3 +1,5 @@
+import sbtwelcome._
+
 enablePlugins(ScalaJSBundlerPlugin)
 
 name := "dio-geo"
@@ -35,5 +37,25 @@ webpackBundlingMode in fastOptJS := BundlingMode.LibraryOnly()
 requireJsDomEnv in Test := true
 
 addCommandAlias("dev", ";fastOptJS::startWebpackDevServer;~fastOptJS")
-
 addCommandAlias("build", "fullOptJS::webpack")
+addCommandAlias("fmt", "all root/scalafmtSbt root/scalafmtAll")
+addCommandAlias("fmtCheck", "all root/scalafmtSbtCheck root/scalafmtCheckAll")
+
+logo :=
+  s"""
+     |████████▄   ▄█   ▄██████▄          ▄██████▄     ▄████████  ▄██████▄
+     |███   ▀███ ███  ███    ███        ███    ███   ███    ███ ███    ███
+     |███    ███ ███▌ ███    ███        ███    █▀    ███    █▀  ███    ███
+     |███    ███ ███▌ ███    ███       ▄███         ▄███▄▄▄     ███    ███
+     |███    ███ ███▌ ███    ███      ▀▀███ ████▄  ▀▀███▀▀▀     ███    ███
+     |███    ███ ███  ███    ███        ███    ███   ███    █▄  ███    ███
+     |███   ▄███ ███  ███    ███        ███    ███   ███    ███ ███    ███
+     |████████▀  █▀    ▀██████▀         ████████▀    ██████████  ▀██████▀
+     |
+     |""".stripMargin
+
+usefulTasks := Seq(
+  UsefulTask("a", "dev", "Start the webapp at localhost:8080 with hot reloading enabled"),
+  UsefulTask("b", "build", "Build a fully optimized JS file"),
+  UsefulTask("c", "fmt", "Run scalafmt on the entire project"),
+)
