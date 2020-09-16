@@ -1,0 +1,81 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    padding: 0.6rem 0;
+    font-size: 1.75rem;
+    background-color: #b4c3bd;
+    opacity: 0.9;
+}
+
+#header .skip {
+    margin-left: 0.75rem;
+    font-size: 1rem;
+}
+
+#header .question {
+    flex: 1;
+}
+
+#header .score {
+    padding-right: 1.3rem;
+}
+
+.App {
+    text-align: center;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    z-index: -1;
+}
+
+#map g {
+    fill: #64a75d;
+}
+
+#map g:hover {
+    fill: #ff7759;
+}
+
+.correctMessage {
+    position: absolute;
+    top: 37.5vh;
+    pointer-events: none;
+    white-space: nowrap;
+    font-size: 25vh;
+    color: #00afff;
+    text-shadow:
+            0 0 0.2rem #09283b,
+            0 0 0.2rem #09283b,
+            0 0 0.2rem #09283b,
+            0 0 0.2rem #09283b;
+    animation: scrollLeft 1s 1 cubic-bezier(.27,.95,.89,.03);
+    padding-left: 100%;
+}
+
+.wrongMessage {
+    position: absolute;
+    top: 37.5vh;
+    pointer-events: none;
+    white-space: nowrap;
+    font-size: 25vh;
+    color: #cf3d3d;
+    text-shadow:
+            0 0 0.2rem #240606,
+            0 0 0.2rem #240606,
+            0 0 0.2rem #240606,
+            0 0 0.2rem #240606;
+    animation: scrollLeft 1s 1 cubic-bezier(.27,.95,.89,.03);
+    padding-left: 100%;
+}
+
+@keyframes scrollLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
