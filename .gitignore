@@ -24,5 +24,4 @@ server.pid
 /reference
 local.conf
 /logs
-/webpack
 /build
